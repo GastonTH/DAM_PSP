@@ -28,8 +28,11 @@ for persona, fecha in lista_persona_anyo.items():
     print(persona, "-", fecha)
 """
 
-ahora = datetime.now()
+"""ahora = datetime.now()
 hace_una_semana = ahora - timedelta(year=7)
-print(hace_una_semana)
+print(hace_una_semana)"""
+
+for persona, fecha in lista_persona_anyo.items():
+    print(persona,"- - -", fecha)
 
 """relativedelta <---<----<<-<<-<<--<<<-<<--<<-----------------------------------"""
