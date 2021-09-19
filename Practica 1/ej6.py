@@ -5,33 +5,37 @@ Escribir un pequeño programa donde:
 - Se calcula cuántos años cumplirán durante el año en curso.
 - Se imprime en pantalla"""
 
-from datetime import datetime, timedelta
-
+from datetime import datetime
 from dateutil.relativedelta import relativedelta
 
-anyo_curso = 2021
+def crear_diccionario_de_fechas(numero_de_fechas):
 
-hoy = datetime.now()
-#print("Hoy:", hoy, "\nFinal de curso", fin_curso)
+    personas_fechas = {}
 
-lista_persona_anyo = {
-    'Alumno1' : 'Pepe', 'Fecha1' : datetime(1999,2,6),
-    'Alumno2' : 'Carlos', 'Fecha2' : datetime(1999,11,1),
-    'Alumno3' : 'Juan', 'Fecha3' : datetime(1993,7,29),
-}
+    for i in range(numero_de_fechas):
+        nombre = input("Dime el nombre de la persona: ")
+        fecha = input("Dime su fecha de nacimiento: (DD/MM/YYYY): ")
+        personas_fechas[nombre] = fecha
+        print(10*"-", "\n")
+    return personas_fechas
 
-"""print(hoy)
+def preguntar_edad_cumplida(diccionario):
 
-for persona, fecha in lista_persona_anyo.items():
+    hoy = datetime.now()
 
-    print(persona, "-", fecha)
-"""
+    for key, value in diccionario.items():
+        fecha = datetime.strptime(value, "%d/%m/%Y")
+        edad = relativedelta(hoy, fecha)
 
-"""ahora = datetime.now()
-hace_una_semana = ahora - timedelta(year=7)
-print(hace_una_semana)"""
+        if (hoy.day >= fecha.day and hoy.month >= fecha.month):
+            print("-- > ya ha cumplido los años")
+        else:
+            print("-- >aun no los ha cumplido")
 
-for persona, fecha in lista_persona_anyo.items():
-    print(persona,"- - -", fecha)
+        print(key, "tiene", edad.years, "años")
 
-"""relativedelta <---<----<<-<<-<<--<<<-<<--<<-----------------------------------"""
+numero_personas = int(input("Cuantas personas quieres anyadir: "))
+
+if(numero_personas != 0):
+    diccionario_personas = dict(crear_diccionario_de_fechas(numero_personas))
+    preguntar_edad_cumplida(diccionario_personas)
