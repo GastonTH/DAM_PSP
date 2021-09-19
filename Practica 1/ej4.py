@@ -7,7 +7,9 @@ def comprobar_mayusculas(cadena):
 
     for i in cadena:
         if i != " " and i == i.upper():
-            print(i.title())
+            numero_de_mayusculas+=1
+
+    return numero_de_mayusculas
 
 cadena = str(input("Dime una cadena: "))
-comprobar_mayusculas(cadena)
+print("En la cadena", cadena, "hay", comprobar_mayusculas(cadena))

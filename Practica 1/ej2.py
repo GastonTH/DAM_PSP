@@ -13,13 +13,17 @@ larga."""
 
     return longitud_palabra"""
 
-def mas_larga(lista):
-    return max(lista_palabras, key=len)
+def mas_larga():
 
+    lista = []
 
-#Main()
-lista_palabras = ["palabra larga", "una corta", "excepcion", "hola", "esta es la mas larga de todas", "XD"]
+    numero_palabras = int(input("Cuantas palabras vas a anyadir: "))
 
-#numero_valores = nValores
+    for i in range(numero_palabras):
+        
+        palabra = str(input("Dime la palabra: "))
+        lista.append(palabra)
 
-print(mas_larga(lista_palabras))
+    return max(lista, key=len)
+
+print("la palabra mas larga es:",mas_larga())

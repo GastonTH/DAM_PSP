@@ -4,15 +4,24 @@ la letra a.
 También se puede hacer elegir al usuario la letra a buscar. (Un poco mas
 emocionante)"""
 
+def crear_lista_nombres(numero):
+
+    lista = []
+
+    for palabras in range(numero):
+        nombre = str(input("Dime el nombre: "))
+        lista.append(nombre)
+    
+    return lista
+
 numero_nombres = int(input("Cuantos nombres quieres anyadir? "))
 lista_nombres = []
 numero_veces_letra = 0
 letra_buscar = ""
 
 if numero_nombres != 0:
-    for palabras in range(numero_nombres):
-        nombre = str(input("Dime el nombre: "))
-        lista_nombres.append(nombre)
+
+    lista_nombres = crear_lista_nombres(numero_nombres)
 
     letra_buscar = str(input("Que letra buscamos?: "))
 
@@ -23,4 +32,4 @@ if numero_nombres != 0:
 else:
     print("No puedo anyadir 0 nombres")
 
-print("En la lista", lista_nombres, "hay", numero_veces_letra, "de la letra", letra_buscar)
+print("En la lista", lista_nombres, "hay", numero_veces_letra, "palabras que empiezen por la letra", letra_buscar)

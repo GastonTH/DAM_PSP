@@ -19,9 +19,14 @@ elif anyo % 4 == 0 and anyo % 100 == 0 and anyo % 400 == 0:
 
 from calendar import isleap
 
+def es_bisiesto(anyo_comprobar):
+
+	return isleap(anyo_comprobar)
+
+
 anyo = int(input("Dime el anyo: "))
 
-if isleap(anyo):
+if es_bisiesto(anyo):
     print("es bisiesto")
 else:
     print("no es bisiesto")

@@ -23,4 +23,3 @@ if numero != 0:
             mayor_de_n+=1
 
     print("hay mayores de 20", mayor_de_n, "personas")
-

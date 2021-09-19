@@ -3,7 +3,6 @@ Escribir una función filtrar_palabras() que tome una lista de palabras y un ent
 devuelva las palabras que tengan más de n caracteres."""
 
 def filtrar_palabras(lista, numero):
-
     for i in lista:
         if len(i) > numero:
             print(i)
