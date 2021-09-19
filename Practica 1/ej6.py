@@ -12,7 +12,6 @@ from dateutil.relativedelta import relativedelta
 anyo_curso = 2021
 
 hoy = datetime.now()
-fin_curso = datetime(anyo_curso, 6, 22)
 #print("Hoy:", hoy, "\nFinal de curso", fin_curso)
 
 lista_persona_anyo = {
